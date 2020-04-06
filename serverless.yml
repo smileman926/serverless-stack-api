@@ -90,4 +90,4 @@ custom:
   stage: ${opt:stage, self:provider.stage}
   # Set the table name here so we can use it while testing locally
   tableName: notes
-  stripeSecretKey: sk_test_JlkdO8BG1NpQVmIdhFhYyk4R00LQYkkgbp
+  environment: ${file(env.yml):${self:custom.stage}, file(env.yml):default}
