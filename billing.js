@@ -21,3 +21,4 @@ export async function main(event, context) {
   } catch (e) {
     return failure({ message: e.message });
   }
+}

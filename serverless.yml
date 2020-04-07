@@ -24,7 +24,7 @@ provider:
   #  SAMPLE_ENV_VAR: ${env:SAMPLE_ENV_VAR}
   environment:
     tableName: ${self:custom.tableName}
-    stripeSecretKey: ${self:custom.stripeSecretKey}
+    stripeSecretKey: ${self:custom.environment.stripeSecretKey}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -91,3 +91,5 @@ custom:
   # Set the table name here so we can use it while testing locally
   tableName: notes
   environment: ${file(env.yml):${self:custom.stage}, file(env.yml):default}
+resources:
+  - ${file(resources/api-gateway-errors.yml)}
